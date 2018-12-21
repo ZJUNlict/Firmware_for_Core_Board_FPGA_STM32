@@ -1,0 +1,14 @@
+module FSMC( input clk,
+              input rst_n,
+              input CS_N,
+              input SCK,
+              input MOSI,
+				  input MOSI_2,
+              input [7:0] txd_data,
+              output reg MISO,
+              output [7:0] rxd_data,
+				  output [7:0] rxd_data_2,
+              output rxd_flag, 
+				  output reg ledState, 
+				  output [2:0]rxd_state_show
+				  );

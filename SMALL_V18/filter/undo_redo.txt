@@ -1,0 +1,40 @@
+GED
+
+	Undo Commands
+	     1.	Delete
+	     2.	Delete
+	     3.	Delete
+	     4.	Delete
+	     5.	Delete
+	     6.	Delete
+	     7.	Move
+	     8.	Insert Node
+	     9.	Insert Node
+	    10.	Insert Symbol
+	    11.	Delete
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+
+WED
+
+	Undo Commands
+	     1.	End Time
+	     2.	End Time
+	     3.	Edit Waveform
+	     4.	Count Value
+			 *** 
+	     5.	Count Value
+			 *** 
+	     6.	Count Value
+			 *** 
+	     7.	Count Value
+			 *** 
+	     8.	Insert Node or Bus
+	     9.	End Time
+
+

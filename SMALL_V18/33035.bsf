@@ -1,0 +1,148 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 216 208)
+	(text "33035" (rect 5 0 40 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 176 25 188)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "dir" (rect 0 0 14 14)(font "Arial" (font_size 8)))
+		(text "dir" (rect 21 27 35 41)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 15 14)(font "Arial" (font_size 8)))
+		(text "clk" (rect 21 43 36 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "rst_n" (rect 0 0 29 14)(font "Arial" (font_size 8)))
+		(text "rst_n" (rect 21 59 50 73)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "SA_in" (rect 0 0 34 14)(font "Arial" (font_size 8)))
+		(text "SA_in" (rect 21 75 55 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "SB_in" (rect 0 0 33 14)(font "Arial" (font_size 8)))
+		(text "SB_in" (rect 21 91 54 105)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "SC_in" (rect 0 0 33 14)(font "Arial" (font_size 8)))
+		(text "SC_in" (rect 21 107 54 121)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "duty[31..0]" (rect 0 0 60 14)(font "Arial" (font_size 8)))
+		(text "duty[31..0]" (rect 21 123 81 137)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "enable" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "enable" (rect 21 139 58 153)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "overcurrent" (rect 0 0 67 14)(font "Arial" (font_size 8)))
+		(text "overcurrent" (rect 21 155 88 169)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "oc" (rect 0 0 14 14)(font "Arial" (font_size 8)))
+		(text "oc" (rect 165 27 179 41)(font "Arial" (font_size 8)))
+		(line (pt 200 32)(pt 184 32)(line_width 1))
+	)
+	(port
+		(pt 200 48)
+		(output)
+		(text "AT" (rect 0 0 16 14)(font "Arial" (font_size 8)))
+		(text "AT" (rect 163 43 179 57)(font "Arial" (font_size 8)))
+		(line (pt 200 48)(pt 184 48)(line_width 1))
+	)
+	(port
+		(pt 200 64)
+		(output)
+		(text "BT" (rect 0 0 15 14)(font "Arial" (font_size 8)))
+		(text "BT" (rect 164 59 179 73)(font "Arial" (font_size 8)))
+		(line (pt 200 64)(pt 184 64)(line_width 1))
+	)
+	(port
+		(pt 200 80)
+		(output)
+		(text "CT" (rect 0 0 15 14)(font "Arial" (font_size 8)))
+		(text "CT" (rect 164 75 179 89)(font "Arial" (font_size 8)))
+		(line (pt 200 80)(pt 184 80)(line_width 1))
+	)
+	(port
+		(pt 200 96)
+		(output)
+		(text "AB" (rect 0 0 17 14)(font "Arial" (font_size 8)))
+		(text "AB" (rect 162 91 179 105)(font "Arial" (font_size 8)))
+		(line (pt 200 96)(pt 184 96)(line_width 1))
+	)
+	(port
+		(pt 200 112)
+		(output)
+		(text "BB" (rect 0 0 16 14)(font "Arial" (font_size 8)))
+		(text "BB" (rect 163 107 179 121)(font "Arial" (font_size 8)))
+		(line (pt 200 112)(pt 184 112)(line_width 1))
+	)
+	(port
+		(pt 200 128)
+		(output)
+		(text "CB" (rect 0 0 16 14)(font "Arial" (font_size 8)))
+		(text "CB" (rect 163 123 179 137)(font "Arial" (font_size 8)))
+		(line (pt 200 128)(pt 184 128)(line_width 1))
+	)
+	(port
+		(pt 200 144)
+		(output)
+		(text "overcurentout" (rect 0 0 80 14)(font "Arial" (font_size 8)))
+		(text "overcurentout" (rect 99 139 179 153)(font "Arial" (font_size 8)))
+		(line (pt 200 144)(pt 184 144)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 176)(line_width 1))
+	)
+)

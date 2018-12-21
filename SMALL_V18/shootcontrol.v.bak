@@ -1,0 +1,6 @@
+module shootcontrol(input clk0,
+						  input rst_n, 
+						  input [7:0]strength, 
+						  input mode, 
+						  output shoot_out, 
+						  output chip_out)

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="filter">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Filter|covm:inst3|lpm_mult:Mult0" CBX_FILE_NAME="mult_2ct.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Filter|finaloutput:inst13|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_8jm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|filter|lpm_ram_dp0:inst1|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_56r1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|filter|rom_h:inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_k691.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

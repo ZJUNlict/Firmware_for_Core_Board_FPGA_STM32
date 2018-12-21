@@ -1,0 +1,129 @@
+Altera SOPC Builder Version 9.10 Build 222
+Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
+
+
+No .sopc_builder configuration file(!)
+# 2016.03.25 21:32:39 (*) mk_custom_sdk starting
+# 2016.03.25 21:32:39 (*) Reading project E:/lyc/SMALL_V16_sim/SMALL14_CPU.ptf.
+
+# 2016.03.25 21:32:39 (*) Finding all CPUs
+# 2016.03.25 21:32:39 (*) Finding all available components
+# 2016.03.25 21:32:39 (*) Reading E:/lyc/SMALL_V16_sim/.sopc_builder/install.ptf
+
+# 2016.03.25 21:32:39 (*) Found 67 components
+
+# 2016.03.25 21:32:40 (*) Finding all peripherals
+
+# 2016.03.25 21:32:40 (*) Finding software components
+
+# 2016.03.25 21:32:40 (*) (Legacy SDK Generation Skipped)
+# 2016.03.25 21:32:40 (*) (All TCL Script Generation Skipped)
+# 2016.03.25 21:32:40 (*) (No Libraries Built)
+# 2016.03.25 21:32:40 (*) (Contents Generation Skipped)
+# 2016.03.25 21:32:40 (*) mk_custom_sdk finishing
+
+# 2016.03.25 21:32:40 (*) Starting generation for system: SMALL14_CPU.
+
+.
+.
+.
+.
+..
+......
+.....
+......
+
+# 2016.03.25 21:32:42 (*) Running Generator Program for cpu_0
+
+# 2016.03.25 21:32:43 (*) Starting Nios II generation
+# 2016.03.25 21:32:43 (*)   Checking for plaintext license.
+# 2016.03.25 21:32:43 (*)   Plaintext license not found.
+# 2016.03.25 21:32:43 (*)   Checking for encrypted license (non-evaluation).
+# 2016.03.25 21:32:44 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2016.03.25 21:32:44 (*)   Getting CPU configuration settings
+# 2016.03.25 21:32:44 (*)   Elaborating CPU configuration settings
+# 2016.03.25 21:32:44 (*)   Creating all objects for CPU
+
+# 2016.03.25 21:32:44 (*)     Testbench
+# 2016.03.25 21:32:44 (*)     Instruction decoding
+# 2016.03.25 21:32:44 (*)       Instruction fields
+# 2016.03.25 21:32:44 (*)       Instruction decodes
+# 2016.03.25 21:32:44 (*)       Signals for RTL simulation waveforms
+# 2016.03.25 21:32:45 (*)       Instruction controls
+# 2016.03.25 21:32:45 (*)     Pipeline frontend
+# 2016.03.25 21:32:45 (*)     Pipeline backend
+# 2016.03.25 21:32:47 (*)   Generating HDL from CPU objects
+# 2016.03.25 21:32:50 (*)   Creating encrypted HDL
+
+# 2016.03.25 21:32:51 (*) Done Nios II generation
+
+# 2016.03.25 21:32:52 (*) Running Generator Program for jtag_uart_0
+
+# 2016.03.25 21:32:53 (*) Running Generator Program for sdram_0
+
+# 2016.03.25 21:32:54 (*) Running Generator Program for epcs_flash_controller_0
+
+# 2016.03.25 21:32:55 (*) Running Generator Program for timer_0
+
+# 2016.03.25 21:32:56 (*) Running Generator Program for timer_watchdog
+
+# 2016.03.25 21:32:57 (*) Running Generator Program for pio_buzzer
+
+# 2016.03.25 21:32:58 (*) Running Generator Program for pio_infra
+
+# 2016.03.25 21:32:59 (*) Running Generator Program for pio_led
+
+# 2016.03.25 21:33:00 (*) Running Generator Program for pio_nF2401_in
+
+# 2016.03.25 21:33:01 (*) Running Generator Program for pio_nF2401_inout
+
+# 2016.03.25 21:33:02 (*) Running Generator Program for pio_nF2401_out
+
+# 2016.03.25 21:33:03 (*) Running Generator Program for sysid
+
+# 2016.03.25 21:33:04 (*) Running Generator Program for pio_scl_24
+
+# 2016.03.25 21:33:05 (*) Running Generator Program for pio_sda_24
+
+# 2016.03.25 21:33:06 (*) Running Generator Program for pio_shoot_off
+
+# 2016.03.25 21:33:07 (*) Running Generator Program for pio_scl_9557
+
+# 2016.03.25 21:33:08 (*) Running Generator Program for pio_sda_9557
+
+# 2016.03.25 21:33:09 (*) Running Generator Program for pio_reset_9557
+
+# 2016.03.25 21:33:10 (*) Running Generator Program for pio_hull_fault1
+
+# 2016.03.25 21:33:11 (*) Running Generator Program for pio_hull_fault2
+
+# 2016.03.25 21:33:12 (*) Running Generator Program for pio_hull_fault3
+
+# 2016.03.25 21:33:13 (*) Running Generator Program for pio_hull_fault4
+
+.
+
+
+# 2016.03.25 21:33:14 (*) Running Test Generator Program for sdram_0
+
+# 2016.03.25 21:33:15 (*) Making arbitration and system (top) modules.
+
+# 2016.03.25 21:33:26 (*) Generating Quartus symbol for top level: SMALL14_CPU
+
+# 2016.03.25 21:33:26 (*) Generating Symbol E:/lyc/SMALL_V16_sim/SMALL14_CPU.bsf
+
+# 2016.03.25 21:33:26 (*) Creating command-line system-generation script: E:/lyc/SMALL_V16_sim/SMALL14_CPU_generation_script
+
+# 2016.03.25 21:33:26 (*) Running setup for HDL simulator: modelsim
+
+
+# 2016.03.25 21:33:27 (*) Completed generation for system: SMALL14_CPU.
+# 2016.03.25 21:33:27 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : E:/lyc/SMALL_V16_sim/SMALL14_CPU.ptf 
+  System HDL Model : E:/lyc/SMALL_V16_sim/SMALL14_CPU.v 
+  System Generation Script : E:/lyc/SMALL_V16_sim/SMALL14_CPU_generation_script 
+
+# 2016.03.25 21:33:27 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

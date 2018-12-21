@@ -1,0 +1,21 @@
+set_global_assignment -name SOURCE_FILE cpu_0.ocp
+set_global_assignment -name VERILOG_FILE PWM_2.v
+ set_global_assignment -name VERILOG_FILE motor_3.v
+ set_global_assignment -name VERILOG_FILE shoot_timer_chip.v
+ set_global_assignment -name VERILOG_FILE shoot_timer.v
+ set_global_assignment -name VERILOG_FILE motor_0.v
+ set_global_assignment -name TCL_FILE motor_hw.tcl
+set_global_assignment -name TCL_FILE PWM_2_hw.tcl
+set_global_assignment -name VERILOG_FILE adgetnew2_0.v
+ set_global_assignment -name SDC_FILE cpu_0.sdc
+set_global_assignment -name VERILOG_FILE adgetnew2.v
+ set_global_assignment -name VERILOG_FILE motor.v
+ set_global_assignment -name TCL_FILE adgetnew2_hw.tcl
+set_global_assignment -name VERILOG_FILE motor_2.v
+ set_global_assignment -name VERILOG_FILE shoot_timer_shoot.v
+ set_global_assignment -name VERILOG_FILE PWM_2_infra_pwm.v
+ set_global_assignment -name TCL_FILE shoot_timer_hw.tcl
+set_global_assignment -name VERILOG_FILE motor_4.v
+ set_global_assignment -name VERILOG_FILE motor_1.v
+ set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID 782BCBA92B9900000153ADF9506D 
+ 

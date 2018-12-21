@@ -1,0 +1,963 @@
+Analysis & Synthesis report for SMALL_V14
+Wed Sep 19 18:17:38 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Partition Status Summary
+  7. Partition Dependent Files
+  8. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+  9. SignalTap II Logic Analyzer Settings
+ 10. Analysis & Synthesis Messages
+ 11. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Sep 19 18:17:38 2018       ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name                      ; SMALL_V14                                   ;
+; Top-level Entity Name              ; SMALL_V14                                   ;
+; Family                             ; Cyclone III                                 ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C25Q240C8       ;                    ;
+; Top-level entity name                                                      ; SMALL_V14          ; SMALL_V14          ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; On                 ; Off                ;
+; Maximum processors allowed for parallel compilation                        ; All                ;                    ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------------+---------+
+; pwmOut_44k.v                     ; yes             ; User Verilog HDL File                    ; C:/xiaomeige FPGA/ssl/SMALL_V18/pwmOut_44k.v                                ;         ;
+; SMALL_V14.bdf                    ; yes             ; User Block Diagram/Schematic File        ; C:/xiaomeige FPGA/ssl/SMALL_V18/SMALL_V14.bdf                               ;         ;
+; judgeSet.v                       ; yes             ; User Verilog HDL File                    ; C:/xiaomeige FPGA/ssl/SMALL_V18/judgeSet.v                                  ;         ;
+; shootcontrol.v                   ; yes             ; User Verilog HDL File                    ; C:/xiaomeige FPGA/ssl/SMALL_V18/shootcontrol.v                              ;         ;
+; FSMC.v                           ; yes             ; User Verilog HDL File                    ; C:/xiaomeige FPGA/ssl/SMALL_V18/FSMC.v                                      ;         ;
+; motorcontrol.bdf                 ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/xiaomeige FPGA/ssl/SMALL_V18/motorcontrol.bdf                            ;         ;
+; 33035.bdf                        ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/xiaomeige FPGA/ssl/SMALL_V18/33035.bdf                                   ;         ;
+; pwm_counter.v                    ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/pwm_counter.v                               ;         ;
+; i2t.v                            ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/i2t.v                                       ;         ;
+; one_bit_filter.v                 ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/one_bit_filter.v                            ;         ;
+; mc33035_ver_62.v                 ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/mc33035_ver_62.v                            ;         ;
+; hull_check.v                     ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/hull_check.v                                ;         ;
+; hallfilter.v                     ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/hallfilter.v                                ;         ;
+; openorcloseloop.v                ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/openorcloseloop.v                           ;         ;
+; dataprocess.v                    ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/dataprocess.v                               ;         ;
+; controlstate.v                   ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/controlstate.v                              ;         ;
+; timer_ver.v                      ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/timer_ver.v                                 ;         ;
+; switchdata.v                     ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/switchdata.v                                ;         ;
+; meanfilter.v                     ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/meanfilter.v                                ;         ;
+; code_mt.v                        ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/code_mt.v                                   ;         ;
+; code.v                           ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/code.v                                      ;         ;
+; add_ver.v                        ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/add_ver.v                                   ;         ;
+; delta_limit.v                    ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/delta_limit.v                               ;         ;
+; pi_ver.v                         ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/pi_ver.v                                    ;         ;
+; code_hold.v                      ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/code_hold.v                                 ;         ;
+; judgeporn.v                      ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/judgeporn.v                                 ;         ;
+; motorcontrol_db.bdf              ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/xiaomeige FPGA/ssl/SMALL_V18/motorcontrol_db.bdf                         ;         ;
+; 33035_db2.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/xiaomeige FPGA/ssl/SMALL_V18/33035_db2.bdf                               ;         ;
+; pwm_counter_db2.v                ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/pwm_counter_db2.v                           ;         ;
+; dataprocess_db.v                 ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/dataprocess_db.v                            ;         ;
+; timer_ver_db.v                   ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/timer_ver_db.v                              ;         ;
+; code_mt_db.v                     ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/code_mt_db.v                                ;         ;
+; code_db.v                        ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/code_db.v                                   ;         ;
+; pi_ver_db.v                      ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/pi_ver_db.v                                 ;         ;
+; infra_filter.v                   ; yes             ; Auto-Found Verilog HDL File              ; C:/xiaomeige FPGA/ssl/SMALL_V18/infra_filter.v                              ;         ;
+; sld_signaltap.vhd                ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/sld_signaltap.vhd            ;         ;
+; sld_signaltap_impl.vhd           ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_signaltap_impl.vhd       ;         ;
+; sld_ela_control.vhd              ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_ela_control.vhd          ;         ;
+; lpm_shiftreg.tdf                 ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf             ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_constant.inc             ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/dffeea.inc                   ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc               ;         ;
+; sld_mbpmg.vhd                    ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_mbpmg.vhd                ;         ;
+; sld_ela_trigger_flow_mgr.vhd     ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd ;         ;
+; sld_buffer_manager.vhd           ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_buffer_manager.vhd       ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
+; db/altsyncram_7324.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/altsyncram_7324.tdf                      ;         ;
+; altdpram.tdf                     ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.tdf                 ;         ;
+; memmodes.inc                     ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/others/maxplus2/memmodes.inc               ;         ;
+; a_hdffe.inc                      ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/a_hdffe.inc                  ;         ;
+; alt_le_rden_reg.inc              ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/alt_le_rden_reg.inc          ;         ;
+; altsyncram.inc                   ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.inc               ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.tdf                  ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/muxlut.inc                   ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/bypassff.inc                 ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/altshift.inc                 ;         ;
+; db/mux_grc.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/mux_grc.tdf                              ;         ;
+; lpm_decode.tdf                   ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.tdf               ;         ;
+; declut.inc                       ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/declut.inc                   ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_compare.inc              ;         ;
+; db/decode_4uf.tdf                ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/decode_4uf.tdf                           ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.tdf              ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc              ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/cmpconst.inc                 ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_counter.inc              ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                             ; c:/altera/13.0/quartus/libraries/megafunctions/alt_counter_stratix.inc      ;         ;
+; db/cntr_1hi.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/cntr_1hi.tdf                             ;         ;
+; db/cmpr_lfc.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/cmpr_lfc.tdf                             ;         ;
+; db/cntr_v7j.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/cntr_v7j.tdf                             ;         ;
+; db/cntr_3fi.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/cntr_3fi.tdf                             ;         ;
+; db/cmpr_ifc.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/cmpr_ifc.tdf                             ;         ;
+; db/cntr_p1j.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/cntr_p1j.tdf                             ;         ;
+; db/cmpr_efc.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/xiaomeige FPGA/ssl/SMALL_V18/db/cmpr_efc.tdf                             ;         ;
+; sld_rom_sr.vhd                   ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_rom_sr.vhd               ;         ;
+; sld_hub.vhd                      ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_hub.vhd                  ;         ;
+; sld_jtag_hub.vhd                 ; yes             ; Encrypted Megafunction                   ; c:/altera/13.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd             ;         ;
++----------------------------------+-----------------+------------------------------------------+-----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------+
+; Partition Status Summary                                           ;
++--------------------------------+-------------+---------------------+
+; Partition Name                 ; Synthesized ; Reason              ;
++--------------------------------+-------------+---------------------+
+; Top                            ; no          ; No relevant changes ;
+; sld_signaltap:auto_signaltap_0 ; no          ; No relevant changes ;
+; sld_hub:auto_hub               ; no          ; No relevant changes ;
++--------------------------------+-------------+---------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                            ;
++---------------------+-------------------+---------+----------------------------------+
+; File                ; Location          ; Library ; Checksum                         ;
++---------------------+-------------------+---------+----------------------------------+
+; 33035.bdf           ; Project Directory ; work    ; a26e018218aa77702ca59ff39c41cce6 ;
+; 33035_db2.bdf       ; Project Directory ; work    ; 014740a82ff1d9c4a6bea523d6a29737 ;
+; add_ver.v           ; Project Directory ; work    ; b0ac7e87e575b74b317f0e0e4d93a557 ;
+; code.v              ; Project Directory ; work    ; f70a87fbc475c6636e27a5391f1ccd27 ;
+; code_db.v           ; Project Directory ; work    ; 9754d1ca8d64022dcd1a7f299c210b9c ;
+; code_hold.v         ; Project Directory ; work    ; c442d44335bfebd7069a788cd7e754d0 ;
+; code_mt.v           ; Project Directory ; work    ; df48f575fe2de9a831597200bde498e7 ;
+; code_mt_db.v        ; Project Directory ; work    ; c0d22b1c4726676ca92b07607465257c ;
+; controlstate.v      ; Project Directory ; work    ; 1aa05ec37282ff97c6569e2df209f5e1 ;
+; dataprocess.v       ; Project Directory ; work    ; 8aa9af9810f3bca533601f920679b224 ;
+; dataprocess_db.v    ; Project Directory ; work    ; 738f4f7d16a30552c35977e9dd29de21 ;
+; delta_limit.v       ; Project Directory ; work    ; 938d02eb2f7d26aa28507a4b671e362d ;
+; FSMC.v              ; Project Directory ; work    ; 197aa2c2df28790d5815ce1fd0a6f9a5 ;
+; hallfilter.v        ; Project Directory ; work    ; 17c9ca3d9c9077e6d18751c9002272e3 ;
+; hull_check.v        ; Project Directory ; work    ; 6142d49f29db984ffc79d24fa5de18e1 ;
+; i2t.v               ; Project Directory ; work    ; 485cd7b3e169144dc74c120fa9f8cb70 ;
+; infra_filter.v      ; Project Directory ; work    ; eb6b6a5b46e5ca9baee5414b8891c7f3 ;
+; judgeporn.v         ; Project Directory ; work    ; df2b95e380d7cea05daf2813432b3159 ;
+; judgeSet.v          ; Project Directory ; work    ; f7f514badca3409b19a9da11b3879837 ;
+; mc33035_ver_62.v    ; Project Directory ; work    ; c2cb39ab4b6f183dd98142c16882a8ef ;
+; meanfilter.v        ; Project Directory ; work    ; 187d03eeadbb864cb376cee1a9bccc5e ;
+; motorcontrol.bdf    ; Project Directory ; work    ; e8e512d35b54a8928b20d9ad12387483 ;
+; motorcontrol_db.bdf ; Project Directory ; work    ; 985be02ed0432941ee902ef2fa328b02 ;
+; one_bit_filter.v    ; Project Directory ; work    ; c1176f94218adbac1d9789f14bc72617 ;
+; openorcloseloop.v   ; Project Directory ; work    ; b8603d2a518de58113a9cd1362555a0c ;
+; pi_ver.v            ; Project Directory ; work    ; 2ca980e35665450c977d5887ae279112 ;
+; pi_ver_db.v         ; Project Directory ; work    ; 84e3c907c0882313d3d1197db11e61c7 ;
+; pwm_counter.v       ; Project Directory ; work    ; 83744767ffc14abbac4e50c467e30f10 ;
+; pwm_counter_db2.v   ; Project Directory ; work    ; 129c7a7b50f46d661d340b30a9603218 ;
+; pwmOut_44k.v        ; Project Directory ; work    ; ca7c494277163cd32cd4ccd4b8464e73 ;
+; shootcontrol.v      ; Project Directory ; work    ; ab020951aaa4b9c3021abe96cc6b53bb ;
+; SMALL_V14.bdf       ; Project Directory ; work    ; 96b3f5dfbc6f7ed37b20c3b7fa110df7 ;
+; switchdata.v        ; Project Directory ; work    ; 8e606fe6483c04687f5cdbc7bcd6b7cc ;
+; timer_ver.v         ; Project Directory ; work    ; 94f323d5fbbb74802794724131696517 ;
+; timer_ver_db.v      ; Project Directory ; work    ; df75a022456f75bc9fb1d03076462865 ;
++---------------------+-------------------+---------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; Type           ;
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ; String         ;
+; sld_node_info                                   ; 805334528                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; sld_data_bits                                   ; 194                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ; Untyped        ;
+; sld_trigger_bits                                ; 194                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ; Signed Integer ;
+; sld_node_crc_hiword                             ; 46864                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; Untyped        ;
+; sld_node_crc_loword                             ; 17180                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; sld_sample_depth                                ; 1024                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; Untyped        ;
+; sld_segment_size                                ; 1024                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; sld_state_bits                                  ; 11                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; sld_trigger_in_enabled                          ; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; String         ;
+; sld_inversion_mask_length                       ; 606                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Signed Integer ;
++-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 194                 ; 194              ; 1024         ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Wed Sep 19 18:17:32 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SMALL_V14 -c SMALL_V14
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file pwmout_44k.v
+    Info (12023): Found entity 1: pwmOut_44k
+Info (12021): Found 1 design units, including 1 entities, in source file testconstant.v
+    Info (12023): Found entity 1: testconstant
+Info (12021): Found 1 design units, including 1 entities, in source file pwm_2.v
+    Info (12023): Found entity 1: PWM_2
+Info (12021): Found 1 design units, including 1 entities, in source file motor_3.v
+    Info (12023): Found entity 1: motor_3
+Info (12021): Found 1 design units, including 1 entities, in source file shoot_timer_chip.v
+    Info (12023): Found entity 1: shoot_timer_chip
+Info (12021): Found 1 design units, including 1 entities, in source file shoot_timer.v
+    Info (12023): Found entity 1: shoot_timer
+Info (12021): Found 1 design units, including 1 entities, in source file motor_0.v
+    Info (12023): Found entity 1: motor_0
+Info (12021): Found 1 design units, including 1 entities, in source file adgetnew2_0.v
+    Info (12023): Found entity 1: adgetnew2_0
+Info (12021): Found 1 design units, including 1 entities, in source file adgetnew2.v
+    Info (12023): Found entity 1: adgetnew2
+Info (12021): Found 1 design units, including 1 entities, in source file motor.v
+    Info (12023): Found entity 1: motor
+Info (12021): Found 1 design units, including 1 entities, in source file motor_2.v
+    Info (12023): Found entity 1: motor_2
+Info (12021): Found 1 design units, including 1 entities, in source file shoot_timer_shoot.v
+    Info (12023): Found entity 1: shoot_timer_shoot
+Info (12021): Found 1 design units, including 1 entities, in source file pwm_2_infra_pwm.v
+    Info (12023): Found entity 1: PWM_2_infra_pwm
+Info (12021): Found 1 design units, including 1 entities, in source file motor_4.v
+    Info (12023): Found entity 1: motor_4
+Info (12021): Found 1 design units, including 1 entities, in source file motor_1.v
+    Info (12023): Found entity 1: motor_1
+Info (12021): Found 1 design units, including 1 entities, in source file small_v14.bdf
+    Info (12023): Found entity 1: SMALL_V14
+Info (12021): Found 1 design units, including 1 entities, in source file clkdi.v
+    Info (12023): Found entity 1: clkdi
+Info (12021): Found 1 design units, including 1 entities, in source file shootcount.v
+    Info (12023): Found entity 1: ShootCount
+Info (12021): Found 1 design units, including 1 entities, in source file shootsave.v
+    Info (12023): Found entity 1: ShootSave
+Info (12021): Found 1 design units, including 1 entities, in source file judgeset.v
+    Info (12023): Found entity 1: judgeSet
+Info (12021): Found 1 design units, including 1 entities, in source file shootcontrol.v
+    Info (12023): Found entity 1: shootcontrol
+Info (12021): Found 1 design units, including 1 entities, in source file fsmc.v
+    Info (12023): Found entity 1: FSMC
+Info (12127): Elaborating entity "SMALL_V14" for the top level hierarchy
+Warning (275043): Pin "Buzzer" is missing source
+Warning (275009): Pin "shoot_off" not connected
+Warning (12125): Using design file motorcontrol.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: motorcontrol
+Info (12128): Elaborating entity "motorcontrol" for hierarchy "motorcontrol:inst2"
+Warning (12125): Using design file 33035.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 33035
+Info (12128): Elaborating entity "33035" for hierarchy "motorcontrol:inst2|33035:inst12"
+Warning (275011): Block or symbol "AND3" of instance "inst14" overlaps another block or symbol
+Warning (12125): Using design file pwm_counter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: pwm_counter
+Info (12128): Elaborating entity "pwm_counter" for hierarchy "motorcontrol:inst2|33035:inst12|pwm_counter:inst12"
+Warning (10240): Verilog HDL Always Construct warning at pwm_counter.v(8): inferring latch(es) for variable "period", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "period[0]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[1]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[2]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[3]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[4]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[5]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[6]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[7]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[8]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[9]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[10]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[11]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[12]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[13]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[14]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[15]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[16]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[17]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[18]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[19]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[20]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[21]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[22]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[23]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[24]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[25]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[26]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[27]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[28]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[29]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[30]" at pwm_counter.v(8)
+Info (10041): Inferred latch for "period[31]" at pwm_counter.v(8)
+Warning (12125): Using design file i2t.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: I2t
+Info (12128): Elaborating entity "I2t" for hierarchy "motorcontrol:inst2|33035:inst12|I2t:inst7"
+Warning (12125): Using design file one_bit_filter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: one_bit_filter
+Info (12128): Elaborating entity "one_bit_filter" for hierarchy "motorcontrol:inst2|33035:inst12|one_bit_filter:inst1"
+Warning (12125): Using design file mc33035_ver_62.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: MC33035_ver_62
+Info (12128): Elaborating entity "MC33035_ver_62" for hierarchy "motorcontrol:inst2|33035:inst12|MC33035_ver_62:inst2"
+Warning (12125): Using design file hull_check.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: HULL_CHECK
+Info (12128): Elaborating entity "HULL_CHECK" for hierarchy "motorcontrol:inst2|33035:inst12|HULL_CHECK:inst10"
+Warning (12125): Using design file hallfilter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: hallfilter
+Info (12128): Elaborating entity "hallfilter" for hierarchy "motorcontrol:inst2|33035:inst12|hallfilter:inst"
+Warning (12125): Using design file openorcloseloop.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: OpenOrCloseLoop
+Info (12128): Elaborating entity "OpenOrCloseLoop" for hierarchy "motorcontrol:inst2|OpenOrCloseLoop:inst27"
+Warning (12125): Using design file dataprocess.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: dataprocess
+Info (12128): Elaborating entity "dataprocess" for hierarchy "motorcontrol:inst2|dataprocess:inst6"
+Warning (10240): Verilog HDL Always Construct warning at dataprocess.v(14): inferring latch(es) for variable "limit", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at dataprocess.v(52): variable "limit" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dataprocess.v(53): variable "limit" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "limit[0]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[1]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[2]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[3]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[4]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[5]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[6]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[7]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[8]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[9]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[10]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[11]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[12]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[13]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[14]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[15]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[16]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[17]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[18]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[19]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[20]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[21]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[22]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[23]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[24]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[25]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[26]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[27]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[28]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[29]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[30]" at dataprocess.v(14)
+Info (10041): Inferred latch for "limit[31]" at dataprocess.v(14)
+Warning (12125): Using design file controlstate.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: controlstate
+Info (12128): Elaborating entity "controlstate" for hierarchy "motorcontrol:inst2|controlstate:inst5"
+Info (10264): Verilog HDL Case Statement information at controlstate.v(27): all case item expressions in this case statement are onehot
+Warning (12125): Using design file timer_ver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: timer_ver
+Info (12128): Elaborating entity "timer_ver" for hierarchy "motorcontrol:inst2|timer_ver:inst7"
+Warning (10240): Verilog HDL Always Construct warning at timer_ver.v(7): inferring latch(es) for variable "trig_time", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "trig_time[0]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[1]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[2]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[3]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[4]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[5]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[6]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[7]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[8]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[9]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[10]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[11]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[12]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[13]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[14]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[15]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[16]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[17]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[18]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[19]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[20]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[21]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[22]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[23]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[24]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[25]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[26]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[27]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[28]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[29]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[30]" at timer_ver.v(7)
+Info (10041): Inferred latch for "trig_time[31]" at timer_ver.v(7)
+Warning (12125): Using design file switchdata.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: SwitchData
+Info (12128): Elaborating entity "SwitchData" for hierarchy "motorcontrol:inst2|SwitchData:inst20"
+Warning (10229): Verilog HDL Expression warning at meanfilter.v(63): truncated literal to match 3 bits
+Warning (12125): Using design file meanfilter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: meanfilter
+Info (12128): Elaborating entity "meanfilter" for hierarchy "motorcontrol:inst2|meanfilter:inst26"
+Warning (10235): Verilog HDL Always Construct warning at meanfilter.v(55): variable "data2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at meanfilter.v(55): variable "data3" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at meanfilter.v(55): variable "data4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at meanfilter.v(55): variable "data5" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at meanfilter.v(55): variable "data6" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at meanfilter.v(55): variable "data7" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at meanfilter.v(55): variable "data8" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (12125): Using design file code_mt.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: code_mt
+Info (12128): Elaborating entity "code_mt" for hierarchy "motorcontrol:inst2|code_mt:inst8"
+Warning (10036): Verilog HDL or VHDL warning at code_mt.v(8): object "preDir" assigned a value but never read
+Warning (12125): Using design file code.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: code
+Info (12128): Elaborating entity "code" for hierarchy "motorcontrol:inst2|code:inst22"
+Warning (12125): Using design file add_ver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ADD_ver
+Info (12128): Elaborating entity "ADD_ver" for hierarchy "motorcontrol:inst2|ADD_ver:inst10"
+Warning (10240): Verilog HDL Always Construct warning at add_ver.v(6): inferring latch(es) for variable "limit", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at add_ver.v(27): variable "limit" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at add_ver.v(29): variable "limit" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "limit[0]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[1]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[2]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[3]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[4]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[5]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[6]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[7]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[8]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[9]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[10]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[11]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[12]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[13]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[14]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[15]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[16]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[17]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[18]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[19]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[20]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[21]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[22]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[23]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[24]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[25]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[26]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[27]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[28]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[29]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[30]" at add_ver.v(6)
+Info (10041): Inferred latch for "limit[31]" at add_ver.v(6)
+Warning (12125): Using design file delta_limit.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: delta_limit
+Info (12128): Elaborating entity "delta_limit" for hierarchy "motorcontrol:inst2|delta_limit:inst"
+Warning (10240): Verilog HDL Always Construct warning at delta_limit.v(8): inferring latch(es) for variable "delta_max", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at delta_limit.v(8): inferring latch(es) for variable "delta_min", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "delta_min[0]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[1]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[2]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[3]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[4]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[5]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[6]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[7]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[8]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[9]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[10]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[11]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[12]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[13]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[14]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[15]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[16]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[17]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[18]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[19]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[20]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[21]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[22]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[23]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[24]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[25]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[26]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[27]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[28]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[29]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[30]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_min[31]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[0]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[1]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[2]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[3]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[4]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[5]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[6]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[7]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[8]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[9]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[10]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[11]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[12]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[13]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[14]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[15]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[16]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[17]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[18]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[19]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[20]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[21]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[22]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[23]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[24]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[25]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[26]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[27]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[28]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[29]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[30]" at delta_limit.v(8)
+Info (10041): Inferred latch for "delta_max[31]" at delta_limit.v(8)
+Warning (12125): Using design file pi_ver.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PI_ver
+Info (12128): Elaborating entity "PI_ver" for hierarchy "motorcontrol:inst2|PI_ver:inst4"
+Warning (12125): Using design file code_hold.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: code_hold
+Info (12128): Elaborating entity "code_hold" for hierarchy "motorcontrol:inst2|code_hold:inst11"
+Warning (12125): Using design file judgeporn.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: judgePorN
+Info (12128): Elaborating entity "judgePorN" for hierarchy "motorcontrol:inst2|judgePorN:inst24"
+Info (12128): Elaborating entity "FSMC" for hierarchy "FSMC:inst"
+Warning (10240): Verilog HDL Always Construct warning at FSMC.v(27): inferring latch(es) for variable "strength_temp", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "strength_temp[0]" at FSMC.v(27)
+Info (10041): Inferred latch for "strength_temp[1]" at FSMC.v(27)
+Info (10041): Inferred latch for "strength_temp[2]" at FSMC.v(27)
+Info (10041): Inferred latch for "strength_temp[3]" at FSMC.v(27)
+Info (10041): Inferred latch for "strength_temp[4]" at FSMC.v(27)
+Info (10041): Inferred latch for "strength_temp[5]" at FSMC.v(27)
+Info (10041): Inferred latch for "strength_temp[6]" at FSMC.v(27)
+Info (10041): Inferred latch for "strength_temp[7]" at FSMC.v(27)
+Info (12128): Elaborating entity "shootcontrol" for hierarchy "shootcontrol:inst19"
+Warning (10034): Output port "shoot_ok" at shootcontrol.v(7) has no driver
+Warning (12125): Using design file motorcontrol_db.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: motorcontrol_DB
+Info (12128): Elaborating entity "motorcontrol_db" for hierarchy "motorcontrol_db:inst21"
+Info (12128): Elaborating entity "judgeSet" for hierarchy "motorcontrol_db:inst21|judgeSet:inst6"
+Warning (12125): Using design file 33035_db2.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: 33035_DB2
+Info (12128): Elaborating entity "33035_DB2" for hierarchy "motorcontrol_db:inst21|33035_DB2:inst12"
+Warning (275011): Block or symbol "AND3" of instance "inst14" overlaps another block or symbol
+Warning (12125): Using design file pwm_counter_db2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: pwm_counter_DB2
+Info (12128): Elaborating entity "pwm_counter_DB2" for hierarchy "motorcontrol_db:inst21|33035_DB2:inst12|pwm_counter_DB2:inst17"
+Warning (10240): Verilog HDL Always Construct warning at pwm_counter_db2.v(8): inferring latch(es) for variable "period", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "period[0]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[1]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[2]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[3]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[4]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[5]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[6]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[7]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[8]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[9]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[10]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[11]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[12]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[13]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[14]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[15]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[16]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[17]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[18]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[19]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[20]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[21]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[22]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[23]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[24]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[25]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[26]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[27]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[28]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[29]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[30]" at pwm_counter_db2.v(8)
+Info (10041): Inferred latch for "period[31]" at pwm_counter_db2.v(8)
+Warning (12125): Using design file dataprocess_db.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: dataprocess_db
+Info (12128): Elaborating entity "dataprocess_db" for hierarchy "motorcontrol_db:inst21|dataprocess_db:inst4"
+Warning (10240): Verilog HDL Always Construct warning at dataprocess_db.v(17): inferring latch(es) for variable "limit", which holds its previous value in one or more paths through the always construct
+Warning (10235): Verilog HDL Always Construct warning at dataprocess_db.v(56): variable "limit" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at dataprocess_db.v(57): variable "limit" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10041): Inferred latch for "limit[0]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[1]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[2]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[3]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[4]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[5]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[6]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[7]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[8]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[9]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[10]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[11]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[12]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[13]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[14]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[15]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[16]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[17]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[18]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[19]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[20]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[21]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[22]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[23]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[24]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[25]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[26]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[27]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[28]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[29]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[30]" at dataprocess_db.v(17)
+Info (10041): Inferred latch for "limit[31]" at dataprocess_db.v(17)
+Warning (12125): Using design file timer_ver_db.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: timer_ver_db
+Info (12128): Elaborating entity "timer_ver_db" for hierarchy "motorcontrol_db:inst21|timer_ver_db:inst36"
+Warning (10240): Verilog HDL Always Construct warning at timer_ver_db.v(7): inferring latch(es) for variable "trig_time", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "trig_time[0]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[1]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[2]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[3]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[4]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[5]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[6]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[7]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[8]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[9]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[10]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[11]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[12]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[13]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[14]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[15]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[16]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[17]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[18]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[19]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[20]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[21]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[22]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[23]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[24]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[25]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[26]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[27]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[28]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[29]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[30]" at timer_ver_db.v(7)
+Info (10041): Inferred latch for "trig_time[31]" at timer_ver_db.v(7)
+Warning (12125): Using design file code_mt_db.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: code_mt_db
+Info (12128): Elaborating entity "code_mt_db" for hierarchy "motorcontrol_db:inst21|code_mt_db:inst33"
+Warning (10036): Verilog HDL or VHDL warning at code_mt_db.v(8): object "preDir" assigned a value but never read
+Warning (12125): Using design file code_db.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: code_db
+Info (12128): Elaborating entity "code_db" for hierarchy "motorcontrol_db:inst21|code_db:inst34"
+Warning (12125): Using design file pi_ver_db.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PI_ver_db
+Info (12128): Elaborating entity "PI_ver_db" for hierarchy "motorcontrol_db:inst21|PI_ver_db:inst7"
+Warning (10240): Verilog HDL Always Construct warning at pi_ver_db.v(20): inferring latch(es) for variable "A_t", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at pi_ver_db.v(20): inferring latch(es) for variable "B_t", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "B_t[0]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[1]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[2]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[3]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[4]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[5]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[6]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[7]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[8]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[9]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[10]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[11]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[12]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[13]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[14]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[15]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[16]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[17]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[18]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[19]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[20]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[21]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[22]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[23]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[24]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[25]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[26]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[27]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[28]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[29]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[30]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "B_t[31]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[0]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[1]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[2]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[3]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[4]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[5]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[6]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[7]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[8]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[9]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[10]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[11]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[12]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[13]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[14]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[15]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[16]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[17]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[18]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[19]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[20]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[21]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[22]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[23]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[24]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[25]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[26]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[27]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[28]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[29]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[30]" at pi_ver_db.v(20)
+Info (10041): Inferred latch for "A_t[31]" at pi_ver_db.v(20)
+Warning (12125): Using design file infra_filter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: infra_filter
+Info (12128): Elaborating entity "infra_filter" for hierarchy "infra_filter:inst17"
+Info (12128): Elaborating entity "pwmOut_44k" for hierarchy "pwmOut_44k:inst18"
+Warning (10230): Verilog HDL assignment warning at pwmOut_44k.v(8): truncated value with size 32 to match size of target (12)
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_7324.tdf
+    Info (12023): Found entity 1: altsyncram_7324
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_grc.tdf
+    Info (12023): Found entity 1: mux_grc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_4uf.tdf
+    Info (12023): Found entity 1: decode_4uf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_1hi.tdf
+    Info (12023): Found entity 1: cntr_1hi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_lfc.tdf
+    Info (12023): Found entity 1: cmpr_lfc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_v7j.tdf
+    Info (12023): Found entity 1: cntr_v7j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_3fi.tdf
+    Info (12023): Found entity 1: cntr_3fi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ifc.tdf
+    Info (12023): Found entity 1: cmpr_ifc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p1j.tdf
+    Info (12023): Found entity 1: cntr_p1j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_efc.tdf
+    Info (12023): Found entity 1: cmpr_efc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Info (12206): 0 design partitions require synthesis
+Info (12208): 3 design partitions do not require synthesis
+    Info (12229): Partition "Top" does not require synthesis because there were no relevant design changes
+    Info (12229): Partition "sld_signaltap:auto_signaltap_0" does not require synthesis because there were no relevant design changes
+    Info (12229): Partition "sld_hub:auto_hub" does not require synthesis because there were no relevant design changes
+Info (144001): Generated suppressed messages file C:/xiaomeige FPGA/ssl/SMALL_V18/SMALL_V14.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 64 warnings
+    Info: Peak virtual memory: 595 megabytes
+    Info: Processing ended: Wed Sep 19 18:17:39 2018
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/xiaomeige FPGA/ssl/SMALL_V18/SMALL_V14.map.smsg.
+
+

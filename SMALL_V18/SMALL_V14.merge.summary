@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Wed Sep 19 18:17:43 2018
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : SMALL_V14
+Top-level Entity Name : SMALL_V14
+Family : Cyclone III
+Total logic elements : 13,860 / 24,624 ( 56 % )
+    Total combinational functions : 11,075 / 24,624 ( 45 % )
+    Dedicated logic registers : 5,169 / 24,624 ( 21 % )
+Total registers : 5169
+Total pins : 98 / 149 ( 66 % )
+Total virtual pins : 0
+Total memory bits : 198,656 / 608,256 ( 33 % )
+Embedded Multiplier 9-bit elements : 60 / 132 ( 45 % )
+Total PLLs : 0 / 4 ( 0 % )

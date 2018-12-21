@@ -1,0 +1,76 @@
+module PI_ver(clk,rst_n,enable,set,feedback,A,B,result);
+input clk,rst_n,enable;
+input [31:0]set;
+input [31:0]feedback;
+output [31:0]result;
+wire [31:0]result;
+input [31:0] A;//A=Kp+Ki;
+input [31:0] B;//B=Kp;
+reg [31:0] Error;
+reg [31:0] preError;
+wire [31:0] P_buffer;
+wire [31:0] I_buffer;
+reg [31:0] Error_accumulate;//relative position feedback
+reg [31:0]A_t,B_t;
+//reg [15:0]result_buffer;
+reg [31:0]delta;
+reg [31:0]count;//refresh Error_accumulate after a while
+always @(posedge clk or negedge rst_n)
+begin
+if(!rst_n)
+	begin
+		A_t<= 32'd360;//KP+KI
+		B_t<= 32'd210;//KP
+		Error<=32'sd0;
+		preError<=32'sd0;
+		Error_accumulate<=32'sd0;
+		count<=32'sd0;
+	end
+else
+	begin
+		A_t<= 32'd360;; 
+		B_t<= 32'd210;
+		if(enable==1'b1)
+		begin
+		    //if(set == 0)
+		    //begin
+		    //    A_t<= 100;
+		    //    B_t<= 70;
+		    //end
+		    //else
+		    //begin
+		    //    A_t<= A; 
+		    //    B_t<= B;
+		    //end
+		    preError<=Error;
+		    Error_accumulate <= Error_accumulate+set *128-feedback;//accumulate the error in code
+		    if((set *128-feedback < 16) && (set *128-feedback > -16))
+		        Error <= 0;
+		    else
+			    Error <= set *128-feedback;		
+			if(count>2000)
+			begin 
+				count<=0;
+				Error_accumulate<=0; 
+			end
+			else count<=count+1;		
+		end
+		else ;
+	end
+	
+end//end always
+
+assign P_buffer=A_t*Error;//B_t=KP+KI
+assign I_buffer=B_t*preError;//B_t=KP
+//LPM_multi LPM_multi_t1(A,Error,P_buffer);
+//LPM_multi LPM_multi_t2(B,preError,I_buffer);
+
+always @(P_buffer,I_buffer,Error_accumulate)
+begin
+	if((Error_accumulate<30)&&(Error_accumulate>-30))
+		 delta<=P_buffer-I_buffer;
+	else delta<=P_buffer-I_buffer;//+Error_accumulate*2;
+	
+end//end always
+assign result=delta;
+endmodule  

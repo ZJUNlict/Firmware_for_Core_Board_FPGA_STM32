@@ -1,0 +1,182 @@
+//Jun 30th
+//120 phase encoding
+//33035 logic
+module MC33035_ver_62(clk,rst_n,enable,dir,SA,SB,SC,AT,BT,CT,AB,BB,CB,fault,pwm); 
+input  clk,rst_n,enable,dir,SA,SB,SC,pwm;
+output AT,BT,CT,AB,BB,CB,fault; 
+reg AT,BT,CT,AB,BB,CB,fault;
+always@(posedge clk or negedge rst_n)
+//always@(enable,SA,SB,SC,pwm)
+begin
+if(!rst_n)
+begin
+	AT<=1'b1; 
+	BT<=1'b1; 
+	CT<=1'b1; 
+	AB<=1'b0; 
+	BB<=1'b0; 
+	CB<=1'b0; 
+	fault<=1'b1;
+end
+else
+begin
+	if(enable==1)
+	begin
+
+	case({SA,SB,SC})
+	3'b100:
+		  begin
+			if(dir==1'b0)//
+				begin
+				  AT<=1'b0; 
+				  BT<=1'b1; 
+				  CT<=1'b1; 
+				  AB<=1'b0; 
+				  BB<=1'b0; 
+				  CB<=1'b1; 
+				  fault<=1'b1; 			  
+				end
+			else
+				begin
+				  AT<=1'b1; 
+				  BT<=1'b1; 
+				  CT<=1'b0;				
+				  AB<=1'b1; 
+				  BB<=1'b0; 
+				  CB<=1'b0; 
+				  fault<=1'b1; 
+				end
+		  end
+	3'b110:
+		  begin
+			if(dir==1'b0)//
+				begin				
+				  AT<=1'b1; 
+				  BT<=1'b0; 
+				  CT<=1'b1; 
+				  AB<=1'b0; 
+				  BB<=1'b0; 
+				  CB<=1'b1;	
+				  fault<=1'b1; 			  
+				end
+			else
+				begin
+				  AT<=1'b1; 
+				  BT<=1'b1; 
+				  CT<=1'b0; 
+				  AB<=1'b0; 
+				  BB<=1'b1; 
+				  CB<=1'b0;	 
+				  fault<=1'b1; 
+				end
+		  end
+	3'b010:
+		  begin
+			if(dir==1'b0)//
+				begin				
+				  AT<=1'b1; 
+				  BT<=1'b0; 
+				  CT<=1'b1; 
+				  AB<=1'b1; 
+				  BB<=1'b0; 
+				  CB<=1'b0;	
+				  fault<=1'b1; 			  
+				end
+			else
+				begin
+				  AT<=1'b0; 
+				  BT<=1'b1; 
+				  CT<=1'b1; 
+				  AB<=1'b0; 
+				  BB<=1'b1; 
+				  CB<=1'b0;	 
+				  fault<=1'b1; 
+				end
+		  end
+	3'b011:
+		  begin
+			if(dir==1'b0)//
+				begin				
+				  AT<=1'b1; 
+				  BT<=1'b1; 
+				  CT<=1'b0; 
+				  AB<=1'b1; 
+				  BB<=1'b0; 
+				  CB<=1'b0;	
+				  fault<=1'b1; 			  
+				end
+			else
+				begin
+				  AT<=1'b0; 
+				  BT<=1'b1; 
+				  CT<=1'b1; 
+				  AB<=1'b0; 
+				  BB<=1'b0; 
+				  CB<=1'b1;	 
+				  fault<=1'b1; 
+				end
+		  end
+	3'b001:
+		  begin
+			if(dir==1'b0)//
+				begin				
+				  AT<=1'b1; 
+				  BT<=1'b1; 
+				  CT<=1'b0; 
+				  AB<=1'b0; 
+				  BB<=1'b1; 
+				  CB<=1'b0;	
+				  fault<=1'b1; 			  
+				end
+			else
+				begin
+				  AT<=1'b1; 
+				  BT<=1'b0; 
+				  CT<=1'b1; 
+				  AB<=1'b0; 
+				  BB<=1'b0; 
+				  CB<=1'b1;	 
+				  fault<=1'b1; 
+				end
+		  end
+	3'b101:
+		  begin
+			if(dir==1'b0)//
+				begin				
+				  AT<=1'b0; 
+				  BT<=1'b1; 
+				  CT<=1'b1; 
+				  AB<=1'b0; 
+				  BB<=1'b1; 
+				  CB<=1'b0;	
+				  fault<=1'b1; 			  
+				end
+			else
+				begin
+				  AT<=1'b1; 
+				  BT<=1'b0; 
+				  CT<=1'b1; 
+				  AB<=1'b1; 
+				  BB<=1'b0; 
+				  CB<=1'b0;	 
+				  fault<=1'b1; 
+				end
+		  end
+	default: fault<=1'b0; //{SA,SB,SC}==others; 	
+	endcase
+ 
+  end //if(enable==1)
+  
+	else //enable==0; 
+	  begin
+	  	AT<=1'b1; 
+	   BT<=1'b1; 
+	   CT<=1'b1; 
+	   AB<=1'b0; 
+	   BB<=1'b0; 
+	   CB<=1'b0; 
+	   fault<=1'b1;
+	   end
+end
+end
+endmodule

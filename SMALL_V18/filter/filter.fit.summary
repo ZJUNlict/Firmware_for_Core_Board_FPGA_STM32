@@ -1,0 +1,16 @@
+Fitter Status : Successful - Fri Dec 31 20:39:45 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : filter
+Top-level Entity Name : Filter
+Family : Cyclone III
+Device : EP3C25Q240C8
+Timing Models : Final
+Total logic elements : 1,033 / 24,624 ( 4 % )
+    Total combinational functions : 1,022 / 24,624 ( 4 % )
+    Dedicated logic registers : 221 / 24,624 ( < 1 % )
+Total registers : 221
+Total pins : 68 / 149 ( 46 % )
+Total virtual pins : 0
+Total memory bits : 6,144 / 608,256 ( 1 % )
+Embedded Multiplier 9-bit elements : 4 / 132 ( 3 % )
+Total PLLs : 0 / 4 ( 0 % )

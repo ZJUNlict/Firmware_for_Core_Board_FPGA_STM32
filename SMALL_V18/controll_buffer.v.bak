@@ -1,0 +1,14 @@
+module control_buffer(input [47:0]data, 
+							 output [7:0]v1, 
+							 output [7:0]v2, 
+							 output [7:0]v3, 
+							 output [7:0]v4, 
+							 output [7:0}vdb, 
+							 output [7:0]strength);
+
+							 
+							 
+							 
+							 
+							 
+endmodule

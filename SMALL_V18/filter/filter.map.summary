@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Dec 31 20:39:17 2010
+Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
+Revision Name : filter
+Top-level Entity Name : Filter
+Family : Cyclone III
+Total logic elements : 1,038
+    Total combinational functions : 1,022
+    Dedicated logic registers : 221
+Total registers : 221
+Total pins : 68
+Total virtual pins : 0
+Total memory bits : 6,144
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 0
